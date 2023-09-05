@@ -11,7 +11,11 @@ const Pasos = () => {
 
     const { handleChangePaso, paso } = useQuisco()
     const router = useRouter()
-    console.log(paso)
+    
+    const calcularProgreso = () => {
+        const porcentaje = (paso / 3) * 100
+        return porcentaje;
+    }
 
     return(
         <>
@@ -29,7 +33,9 @@ const Pasos = () => {
             </div>
 
             <div className="bg-gray-100 mb-10">
-                <div className="rounder-full bg-amber-500 text-xs leading-none h-2 text-center text-white">
+                <div className="rounder-full bg-amber-500 text-xs leading-none h-2 text-center text-white" style={{
+                    width: `${calcularProgreso()}%`
+                }}>
                     
                 </div>
             </div>
