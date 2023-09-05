@@ -29,8 +29,8 @@ const Pasos = () => {
             </div>
 
             <div className="bg-gray-100 mb-10">
-                <div>
-
+                <div className="rounder-full bg-amber-500 text-xs leading-none h-2 text-center text-white">
+                    
                 </div>
             </div>
         </>
