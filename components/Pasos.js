@@ -7,9 +7,11 @@ const pasos = [
 const Pasos = () => {
     return(
         <>
-            <div>{pasos.map(paso => (
-                <button key={paso.paso}>
-                    {paso.nombre}
+            <div className="flex justify-between">
+                {pasos.map(paso => (
+                <button
+                    className="text-2xl font-bold"
+                    key={paso.paso}> {paso.nombre}
                 </button>
             ))}</div>
         </>
