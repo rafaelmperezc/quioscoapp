@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import useQuisco from "@/hooks/useQuisco";
 
 const pasos = [
     {paso: 1, nombre: 'Menú', url:'/'},
@@ -9,12 +8,20 @@ const pasos = [
 
 const Pasos = () => {
 
-    const { handleChangePaso, paso } = useQuisco()
     const router = useRouter()
     
     const calcularProgreso = () => {
-        const porcentaje = (paso / 3) * 100
-        return porcentaje;
+        let valor
+
+        if(router.pathname === "/"){
+            valor = 2
+        } else if (router.pathname === "/resumen"){
+            valor = 50
+        } else {
+            valor = 100
+        }
+        
+        return valor;
     }
 
     return(
@@ -24,7 +31,6 @@ const Pasos = () => {
                     <button
                         onClick={() => {
                             router.push(paso.url)
-                            handleChangePaso(paso.paso)
                         }}
                         className="text-2xl font-bold"
                         key={paso.paso}> {paso.nombre}
