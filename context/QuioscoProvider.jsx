@@ -55,6 +55,10 @@ const QuioscoProvider = ({children}) => {
         setModal(false)
     }
 
+    const handleEditarCantidades = id => {
+        console.log(id)
+    }
+
 
     return(
         <>
@@ -68,7 +72,8 @@ const QuioscoProvider = ({children}) => {
                     modal,
                     handleChangeModal,
                     handleAgregarPedido,
-                    pedido
+                    pedido,
+                    handleEditarCantidades
                 }}
             >
                 {children}
